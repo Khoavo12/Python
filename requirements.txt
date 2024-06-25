@@ -2,3 +2,4 @@ streamlit
 pandas
 matplotlip-pyplot
 plotly
+pip install --upgrade pip
