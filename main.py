@@ -10,16 +10,16 @@ def main_page():
     df = pd.read_csv("dataset_free-tiktok-scraper_2022-07-27_21-44-20-266.csv")
     # tạo sidebar chứa các thông tin về dataset Nickname,Verified,CommentCount,PlayCount,ShareCount,Duration
 
-    st.sidebar.title('Các Chức Năng')
-    choose = st.sidebar.selectbox('Chọn thông tin', ['Thông tin sinh viên và dataset','Verified',"Annual Spending","Fake Gegament","Number of Tiktok dowload","TikTokUsersCountryTotal2023"])
-    if choose == 'Thông tin sinh viên và dataset':
-        st.header('Thông tin sinh viên')
-        st.write('Họ và tên: Nguyễn Văn Thành')
-        st.write('MSSV: 17521152')
-        st.write('Lớp: KSTN-CNTT-K60')
-        st.header('Dataset chính')
+    st.sidebar.title('Functions')
+    choose = st.sidebar.selectbox('Select information', ['Student information and dataset','Verified',"Annual Spending","Fake Gegament","Number of Tiktok dowload","TikTokUsersCountryTotal2023"])
+    if choose == 'Student information and dataset':
+        st.header('Student information')
+        st.write('First and last name: Tran Viet Long, Vo Minh Khoa, Thach Thi Thanh Ngan, Vu Thi Ha Vy, Tran Yen Thanh')
+        st.write('ID: 10623028, 10623058, 10623030, 10323074, 10323029')
+        st.write('Class: Python')
+        st.header('Main database')
         st.write(df)
-        st.write("Ngoài tập dữ liệu trên nhóm còn sử dụng 1 số dữ liệu khác được lấy từ trang")
+        st.write("In addition to the above data set, the group also uses some other data taken from the page")
         st.markdown("[Statista](https://www.statista.com/)")
     if choose == 'Verified':
         # Vẽ biểu đồ tròn thể hiện số lượng Verified và Not Verified
@@ -43,13 +43,13 @@ def main_page():
         )
 
         # Customize the title and layout
-        ax.set_title('Biểu đồ thể hiện phần trăm Verified và Not Verified', fontsize=14, weight='bold')
+        ax.set_title('The graph shows the percentage of Verified and Not Verified', fontsize=14, weight='bold')
         ax.set_ylabel('')  # Remove y-axis label for better appearance
 
         # Display the plot in Streamlit
         st.pyplot(fig)
         # Nhận xét về biểu đồ 
-        st.write('Biểu đồ trên thể hiện phần trăm Not Verified khá cao, chiếm gần 3/4 cho thấy sự lõng lẻo về mặt xác thực tài khoản trên TikTok')
+        st.write('The chart above shows a quite high percentage of Not Verified, accounting for nearly 3/4, showing the lack of account verification on TikTok.')
     if choose == 'Annual Spending':
     # Read the Excel file with specified column names
         sheet_name = 'Data'
@@ -178,11 +178,11 @@ def landing_page():
     unsafe_allow_html=True
     )
     st.write(
-"Chào mừng bạn đến với bảng điều khiển phân tích TikTok của chúng tôi. "
-"Tại đây, bạn sẽ khám phá thông tin về hành vi người dùng, nội dung phổ biến, và đặc điểm của khán giả.  "
-"Dữ liệu của chúng tôi sẽ giúp bạn hiểu sâu hơn về TikTok và tạo ra chiến lược sáng tạo để thành công trên nền tảng này."
+"Welcome to our TikTok analytics dashboard. "
+"Here, you'll discover information about user behavior, popular content, and audience characteristics.  "
+"Our data will help you gain a deeper understanding of TikTok and create a creative strategy for success on the platform."
     )
-    st.markdown("Hiện nay, TikTok đã trở thành một trong những nền tảng mạng xã hội phổ biến nhất trên toàn cầu, thu hút hàng triệu người dùng từ mọi lứa tuổi. Nền tảng này nổi bật với các video ngắn, sáng tạo và dễ dàng lan truyền, giúp người dùng chia sẻ nội dung và kết nối với cộng đồng một cách nhanh chóng. Tuy nhiên, TikTok cũng đối mặt với nhiều vấn đề như bảo mật dữ liệu, quyền riêng tư và nội dung không phù hợp. Sự phát triển nhanh chóng của TikTok đòi hỏi các nhà quản lý phải đưa ra các biện pháp kiểm soát và quản lý hiệu quả để bảo vệ người dùng và duy trì môi trường an toàn trên mạng.")
+    st.markdown("Currently, TikTok has become one of the most popular social networking platforms globally, attracting millions of users from all ages. This platform stands out for short, creative, and easily viral videos, helping users share content and connect with the community quickly. However, TikTok also faces many issues such as data security, privacy, and inappropriate content. TikTok's rapid growth requires regulators to put in place effective controls and management measures to protect users and maintain a safe environment online..")
 
     if st.button("Get Started"):
         st.session_state.started = True
