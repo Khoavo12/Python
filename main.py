@@ -19,7 +19,7 @@ def main_page():
         st.write('Trần Yến Thanh-10323029')
         st.write('Thạch Thị Thanh Ngân-10623030')
         st.write('Trần Việt Long-10623028')
-        st.write('Class:BBA ')
+        st.write('Class-BBA')
         st.header('Dataset chính')
         st.write(df)
         st.write("Ngoài tập dữ liệu trên nhóm còn sử dụng 1 số dữ liệu khác được lấy từ trang")
